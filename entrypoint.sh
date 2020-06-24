@@ -5,7 +5,7 @@ if [ ! -f /debug0 ]; then
 	fi
 
 	if [ -e requirements.txt ]; then
-		pip2 install -r requirements.txt
+		pip3 install -r requirements.txt
 	fi
 
 	touch /debug0
@@ -36,7 +36,7 @@ fi
 
 if [ -e /debug1 ]; then
 	echo "Running app in debug mode!"
-	python2 app.py
+	python3 app.py
 else
 	echo "Running app in production mode!"
 	nginx && uwsgi --ini /app.ini
